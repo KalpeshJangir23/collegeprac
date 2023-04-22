@@ -4,10 +4,6 @@
 #include <iostream>
 using namespace std;
 
-
-
-
-
 void selectioSort(int arr[], int size)
 {
     for (int i = 0; i < size - 1; i++)
@@ -28,7 +24,6 @@ void selectioSort(int arr[], int size)
 
 int main()
 {
-
     int size;
     cout << "Enter size of array : ";
     cin >> size;
@@ -40,6 +35,7 @@ int main()
     }
 
     selectioSort(arr, size);
+    // print the results
     cout << "Sorted array :  ";
     for (int i = 0; i < size; i++)
     {
