@@ -1,49 +1,51 @@
 // Time complexity : O(N^2)
 // Space complexity : O(N)
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-void swap(int *a, int *b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
 
-void printArray(int arr[], int size){
-    for(int i = 0; i < size; i++){
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
 
-void selectioSort(int arr[], int size){
-    for(int i = 0; i < size-1; i++){
+
+
+void selectioSort(int arr[], int size)
+{
+    for (int i = 0; i < size - 1; i++)
+    {
         int min = i;
-        for(int j = i+1; j < size; j++){
-            if(arr[j] < arr[min]){
+        for (int j = i + 1; j < size; j++)
+        {
+            if (arr[j] < arr[min])
+            {
                 min = j;
             }
         }
-        swap(&arr[min], &arr[i]);
+        int temp = arr[min];
+        arr[min] = arr[i];
+        arr[i] = temp;
     }
 }
 
-int main(){
-     
+int main()
+{
+
     int size;
     cout << "Enter size of array : ";
     cin >> size;
     int arr[size];
     cout << "Enter array elements : ";
-    for(int i = 0; i < size; i++){
+    for (int i = 0; i < size; i++)
+    {
         cin >> arr[i];
     }
 
-    selectioSort(arr,size);
+    selectioSort(arr, size);
     cout << "Sorted array :  ";
-    printArray(arr, size);
-    
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 
     return 0;
 }
