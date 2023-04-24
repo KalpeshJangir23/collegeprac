@@ -24,7 +24,7 @@ void calculateTurnaroundTime(struct Process processes[], int n) {
 
 void printTable(struct Process processes[], int n) {
     int i;
-    printf("Process ID\tBurst Time\tWaiting Time\tTurnaround Time\n");
+    printf("Process ID\t\tBurst Time\t\tWaiting Time\t\tTurnaround Time\n");
     for (i = 0; i < n; i++) {
         printf("%d\t\t%d\t\t%d\t\t%d\n", processes[i].id, processes[i].burst_time, processes[i].waiting_time, processes[i].turnaround_time);
     }
@@ -52,7 +52,7 @@ int main() {
     }
     avg_waiting_time /= n;
     avg_turnaround_time /= n;
-    printf("Average waiting time: %.2f\n", avg_waiting_time);
-    printf("Average turnaround time: %.2f\n", avg_turnaround_time);
+    printf("Average waiting time: %.2f\n ", avg_waiting_time);
+    printf("Average turnaround time: %.2f\n ", avg_turnaround_time);
     return 0;
 }

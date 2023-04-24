@@ -5,24 +5,24 @@ int main()
     int incomingStream[] = {4, 1, 2, 4, 5};
     int pageFaults = 0;
     int frames = 3;
-    int m, n, s, pages;
+    int i, n, s, pages;
 
     pages = sizeof(incomingStream) / sizeof(incomingStream[0]);
 
     printf("Incoming \t Frame 1 \t Frame 2 \t Frame 3");
     int temp[frames];
-    for (m = 0; m < frames; m++)
+    for (i = 0; i < frames; i++)
     {
-        temp[m] = -1;
+        temp[i] = -1;
     }
 
-    for (m = 0; m < pages; m++)
+    for (i = 0; i < pages; i++)
     {
         s = 0;
 
         for (n = 0; n < frames; n++)
         {
-            if (incomingStream[m] == temp[n])
+            if (incomingStream[i] == temp[n])
             {
                 s++;
                 pageFaults--;
@@ -32,15 +32,15 @@ int main()
 
         if ((pageFaults <= frames) && (s == 0))
         {
-            temp[m] = incomingStream[m];
+            temp[i] = incomingStream[i];
         }
         else if (s == 0)
         {
-            temp[(pageFaults - 1) % frames] = incomingStream[m];
+            temp[(pageFaults - 1) % frames] = incomingStream[i];
         }
 
         printf("\n");
-        printf("%d\t\t\t", incomingStream[m]);
+        printf("%d\t\t\t", incomingStream[i]);
         for (n = 0; n < frames; n++)
         {
             if (temp[n] != -1)
