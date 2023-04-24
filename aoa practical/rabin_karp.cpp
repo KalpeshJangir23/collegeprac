@@ -1,4 +1,6 @@
 #include<iostream>
+#include <cstring>
+#include <climits>
 using namespace std;
 
 #define d 256
