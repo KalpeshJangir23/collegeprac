@@ -16,30 +16,20 @@ public:
     //return if s exceed sum
     if(s>sum)
         return;
- 
     //check if stack has the right subsets of numbers
     if(s==sum){
         hasSolution = true;
         //display stack contents
         displaySolutionSet();
-        //Though found a solution but deliberately 
-        //returning to find more
         return;
     }
-        
- 
     for(int i=idx; i<numberOfElements; i++){
         //Adding element to the stack
         solutionSet.push(set[i]);
- 
-        //add set[i] to the 's' and recusively start from next number
         solve(s+set[i],i+1);
-        
-        //Removing element from stack i.e Backtracking
         solutionSet.pop();
     }
   }
-  
   //Function to display stack content
   void displaySolutionSet(){
         stack<int> temp;
