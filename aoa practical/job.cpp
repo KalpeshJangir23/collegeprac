@@ -4,7 +4,6 @@
 #include <iostream>
 using namespace std;
 
-// A structure to represent a job
 struct Job {
 
 	char id; // Job Id
@@ -13,16 +12,16 @@ struct Job {
 				// deadline
 };
 
-// Comparator function for sorting jobs
+
 bool comparison(Job a, Job b)
 {
 	return (a.profit > b.profit);
 }
 
-// Returns maximum profit from jobs
+
 void printJobScheduling(Job arr[], int n)
 {
-	// Sort all jobs according to decreasing order of profit
+	
 	sort(arr, arr + n, comparison);
 
 	int result[n]; // To store result (Sequence of jobs)
@@ -34,8 +33,7 @@ void printJobScheduling(Job arr[], int n)
 
 	// Iterate through all given jobs
 	for (int i = 0; i < n; i++) {
-		// Find a free slot for this job (Note that we start
-		// from the last possible slot)
+
 		for (int j = min(n, arr[i].dead) - 1; j >= 0; j--) {
 			// Free slot found
 			if (slot[j] == false) {

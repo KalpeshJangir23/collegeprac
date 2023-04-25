@@ -1,4 +1,4 @@
-// C++ Program for Floyd Warshall Algorithm
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -51,7 +51,6 @@ void printSolution(int dist[][V])
 		cout << endl;
 	}
 }
-
 // Driver's code
 int main()
 {

@@ -26,7 +26,6 @@ int main() {
 
   // set number of edge to 0
   no_edge = 0;
-
   selected[0] = true;
 
   int x;  //  row number
@@ -62,3 +61,11 @@ int main() {
 
   return 0;
 }
+
+
+
+
+
+
+
+
