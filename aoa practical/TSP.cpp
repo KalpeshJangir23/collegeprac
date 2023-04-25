@@ -16,7 +16,7 @@ int dist[n + 1][n + 1] = {
 int memo[n + 1][1 << (n + 1)];
 
 int fun(int i, int mask)
-{
+{                                                                                         
 	if (mask == ((1 << i) | 3))
 		return dist[1][i];
 	// memoization
