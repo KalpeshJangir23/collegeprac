@@ -1,4 +1,6 @@
 #include<iostream>
+#include <cstring>
+#include <climits>
 using namespace std;
 
 #define d 256
@@ -29,9 +31,6 @@ void search(char pat[], char txt[], int q)
 					break;
 				}
 			}
-
-
-
 			if (j == M)
 				cout << "Pattern found at index " << i
 					<< endl;
@@ -51,10 +50,7 @@ int main()
 {
 	char txt[] = "GEEKS FOR GEEKS";
 	char pat[] = "GEEK";
-
 	int q = INT_MAX;
-
-
 	search(pat, txt, q);
 	return 0;
 }
